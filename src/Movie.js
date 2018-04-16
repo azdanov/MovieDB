@@ -23,7 +23,7 @@ export type MovieType = {
   release_date: string,
 };
 
-const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
+const POSTER_PATH = 'https://image.tmdb.org/t/p/w154';
 
 const Movie = ({ movie }: { movie: MovieType }) => (
   <Link to={`/${movie.id}`}>
