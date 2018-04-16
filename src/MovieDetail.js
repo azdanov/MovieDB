@@ -79,7 +79,9 @@ class MovieDetail extends Component<Props, State> {
 
   async componentDidMount() {
     const movieId = String(this.props.match.params.id);
-    const dbApi = process.env.THE_MOVIE_DB_API ? process.env.THE_MOVIE_DB_API : '';
+    const dbApi = process.env.REACT_APP_THE_MOVIE_DB_API
+      ? process.env.REACT_APP_THE_MOVIE_DB_API
+      : '';
     try {
       const res = await axios.get(
         `https://api.themoviedb.org/3/movie/${movieId}?api_key=${dbApi}&language=en-US`,

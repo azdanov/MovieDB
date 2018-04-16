@@ -18,7 +18,9 @@ class MoviesList extends PureComponent<Props, State> {
   };
 
   async componentDidMount() {
-    const dbApi = process.env.THE_MOVIE_DB_API ? process.env.THE_MOVIE_DB_API : '';
+    const dbApi = process.env.REACT_APP_THE_MOVIE_DB_API
+      ? process.env.REACT_APP_THE_MOVIE_DB_API
+      : '';
     try {
       const res = await axios.get(
         `https://api.themoviedb.org/3/discover/movie?api_key=${dbApi}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`,
